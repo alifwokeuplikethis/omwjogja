@@ -1,0 +1,131 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container {
+    height: 100vh;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+    margin-top: 100px;
+}
+
+.container::-webkit-scrollbar{
+    display: none;
+}
+.snap-section {
+    height: 100vh;
+    scroll-snap-align: start;
+    font-size: 2em;
+    background-color: lightblue;
+}
+
+
+.landingPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                url('/images/kolam.jpg') no-repeat center center/cover;
+    color: white;
+}
+header {
+    background-color: #f0f0f0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    padding: 10px; /* Perkecil padding agar tidak kepenuhan di layar kecil */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Tambahkan shadow agar terlihat lebih rapi */
+}
+/* NAVIGATION */
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.text-content {
+    flex: 1;
+    font-size: 40px;
+    color: white;
+    text-align: left;
+}
+
+.image-content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.image-content img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.navigation {
+    display: flex;
+    flex-wrap: wrap; /* Agar tidak terpotong di layar kecil */
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #3a6cf4;
+    font-size: 1.1em;
+    font-weight: 500;
+    padding: 8px 15px; /* Tambahkan padding agar lebih nyaman di-klik */
+    transition: 0.3s;
+}
+
+.navigation a:hover {
+    color: purple;
+}
+/* MEDIA QUERY UNTUK RESPONSIVE */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .navigation {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .navigation a {
+        display: block;
+        padding: 10px;
+        text-align: center;
+        width: 100%;
+    }
+}
+
+h3{
+    text-decoration: none;
+    color: #3a6cf4;
+    font-size: 24px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.no-snap-section {
+    height: 300vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+    background-color: lightcoral;
+}
